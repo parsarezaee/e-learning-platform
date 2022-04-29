@@ -60,11 +60,7 @@ class BaseContent(models.Model):
     created = models.DateTimeField(auto_now_add=True)
 
 
-class Text(BaseContent):
-    body = models.TextField()
-
-
-class OrderContent(BaseContent):
+class OrderedContent(BaseContent):
     class Meta:
         proxy = True
         ordering = ['created']
